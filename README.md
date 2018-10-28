@@ -6,4 +6,4 @@ A sample [Sourcegraph extension](https://github.com/sourcegraph/sourcegraph-exte
 
 [**➕ Add to Sourcegraph**](https://sourcegraph.com/extensions/sqs/word-count)
 
-![screenshot](screenshot.png)
+![screenshot](https://user-images.githubusercontent.com/1976/47622329-1fb06f80-dac1-11e8-8c4e-189ed9731895.png)
