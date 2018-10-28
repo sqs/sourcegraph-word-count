@@ -1,0 +1,89 @@
+{
+  "name": "word-count",
+  "title": "Word count",
+  "description": "Counts the number of words in a file.",
+  "publisher": "sqs",
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "actions": [
+      {
+        "id": "wordCount.openPanel",
+        "command": "openPanel",
+        "commandArguments": [
+          "wordCount.panel"
+        ],
+        "category": "Word count",
+        "title": "Show panel",
+        "actionItem": {
+          "label": "Word count",
+          "description": "Count words in this file"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "action": "wordCount.openPanel",
+          "when": "resource && config.wordCount.showInEditorTitle"
+        }
+      ],
+      "directory/page": [
+        {
+          "action": "wordCount.openPanel",
+          "when": "resource"
+        }
+      ],
+      "commandPalette": [
+        {
+          "action": "wordCount.openPanel",
+          "when": "resource"
+        }
+      ]
+    },
+    "views": {
+      "window/panel": [
+        {
+          "id": "wordCount.panel"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Word count configuration",
+      "properties": {
+        "showInEditorTitle": {
+          "type": "boolean",
+          "description": "Show a button to show the word count panel in the editor title.",
+          "default": false
+        }
+      }
+    }
+  },
+  "version": "0.0.0-DEVELOPMENT",
+  "license": "MIT",
+  "main": "dist/word-count.js",
+  "scripts": {
+    "tslint": "tslint -p tsconfig.json './src/**/*.ts'",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "parcel build --out-file dist/word-count.js src/word-count.ts",
+    "serve": "parcel serve --no-hmr --out-file dist/word-count.js src/word-count.ts",
+    "watch:typecheck": "tsc -p tsconfig.json -w",
+    "watch:build": "tsc -p tsconfig.dist.json -w",
+    "sourcegraph:prepublish": "npm run build"
+  },
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Firefox versions",
+    "last 1 Edge versions",
+    "last 1 Safari versions"
+  ],
+  "devDependencies": {
+    "@sourcegraph/tsconfig": "^3.0.0",
+    "@sourcegraph/tslint-config": "^12.0.0",
+    "parcel-bundler": "^1.10.3",
+    "sourcegraph": "^18.1.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3"
+  }
+}
