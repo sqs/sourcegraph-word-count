@@ -1,6 +1,6 @@
 # Word count (Sourcegraph extension)
 
-A sample [Sourcegraph extension](https://github.com/sourcegraph/sourcegraph-extension-api) for counting the number of words in a file.
+A sample [Sourcegraph extension](https://docs.sourcegraph.com/extensions) for counting the number of words in a file.
 
 [**🗃️ Source code**](https://github.com/sqs/sourcegraph-word-count)
 
